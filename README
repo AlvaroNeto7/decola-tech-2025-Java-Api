@@ -1,0 +1,57 @@
+# Projeto de API Java - Decola Tech 2025
+
+Este é um projeto de API em Java desenvolvido como parte do curso Decola Tech 2025. Este repositório contém a implementação da API e as classes que lidam com as exceções e respostas de erro.
+
+## Adicionando a Classe `ErrorResponse`
+
+Como parte da implementação da API, foi adicionada a classe `ErrorResponse` para fornecer respostas de erro personalizadas ao cliente. Ela ajuda a tornar a comunicação com o cliente mais clara, incluindo o código de status HTTP, a mensagem de erro e detalhes adicionais, se necessário.
+
+### Classe `ErrorResponse`
+
+A classe `ErrorResponse` é responsável por representar as informações de erro que serão retornadas em resposta a uma requisição mal-sucedida. Ela possui três propriedades principais:
+
+- **statusCode**: O código de status HTTP relacionado ao erro.
+- **message**: A mensagem descritiva do erro.
+- **details**: Detalhes adicionais sobre o erro, caso necessário.
+
+Aqui está a implementação da classe `ErrorResponse`:
+
+```java
+package me.dio.controller.exception;
+
+public class ErrorResponse {
+   
+    private int statusCode;
+    private String message;
+    private String details;
+
+    public ErrorResponse(int statusCode, String message, String details) {
+        this.statusCode = statusCode;
+        this.message = message;
+        this.details = details;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+}
